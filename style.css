@@ -376,17 +376,16 @@ code {
 
 #responsive-video-container{
   width: 100%;
-  text-align: center;          /* fallback centering */
+  display: flex;
+  justify-content: center;
 }
 
 #responsive-video-container video{
-  display: block;
-  margin: 0 auto !important;   /* force centering even if overridden */
-  width: min(100%, 900px);     /* choose your max display size */
+  width: min(100%, 900px);   /* pick your max display width */
+  aspect-ratio: 640 / 368;   /* your video ratio */
   height: auto;
-  aspect-ratio: 640 / 368;     /* keep your video ratio */
+  display: block;
 }
-
 /* === Responsive === */
 
 @media (max-width: 900px) {
