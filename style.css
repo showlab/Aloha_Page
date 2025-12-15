@@ -415,29 +415,6 @@ code {
     align-items: flex-start;
   }
 
-  .video-wrapper.ad-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;   /* remove black background */
-  }
-
-  .video-wrapper.ad-video video {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 368px;          /* native height */
-    object-fit: contain;        /* no cropping, no padding */
-  }
-
-  .video-wrapper.ad-video {
-    background: transparent;      /* override black background */
-  }
-
-  .video-wrapper.ad-video .ad-video-el {
-    width: 100%;                  /* key: expand to wrapper width */
-    height: auto;                 /* keep aspect ratio */
-    display: block;               /* avoid inline baseline quirks */
-  }
+  .responsive-video-container { padding-bottom: 57.5%; }
   
 }
