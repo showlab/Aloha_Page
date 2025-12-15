@@ -414,5 +414,20 @@ code {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .video-wrapper.ad-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;   /* remove black background */
+  }
+
+  .video-wrapper.ad-video video {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 368px;          /* native height */
+    object-fit: contain;        /* no cropping, no padding */
+  }
   
 }
