@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ShowUI-Aloha — Human-Taught Computer-Use Agent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="ShowUI-Aloha is a human-taught computer-use agent that learns workflows from demonstrations and executes new task variants on real Windows and macOS desktops."
+  />
+  <!-- Social preview (optional, point to an existing banner) -->
+  <meta property="og:title" content="ShowUI-Aloha — Human-Taught Computer-Use Agent" />
+  <meta property="og:description" content="Teach your computer once. Aloha learns the workflow and executes new task variants." />
+  <meta property="og:image" content="assets/branding/hero_banner.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/branding/footer_logo.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar container">
+      <div class="nav-title">ShowUI-Aloha</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#comparisons">Comparisons</a>
+        <a href="#demos">Demos</a>
+        <a href="#benchmark">OSWorld</a>
+        <a href="#system">System</a>
+        <a href="#usage">Usage</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>ShowUI-Aloha</h1>
+        <p class="hero-subtitle">Human-Taught Computer-Use Agent</p>
+        <p class="hero-tagline">
+          Teach your computer once. Aloha learns the workflow and executes new task variants.
+        </p>
+        <p class="hero-tagline-small">
+          <strong>Recorder → Learner → Planner → Actor → Executor</strong>
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-pill">361 OSWorld tasks tested</div>
+          <div class="stat-pill">60.1% success rate (217/361)</div>
+          <div class="stat-pill">Windows &amp; macOS</div>
+          <div class="stat-pill">MIT License</div>
+        </div>
+
+        <div class="hero-buttons">
+          <!-- Replace # with real links -->
+          <a class="btn primary" href="#" target="_blank" rel="noopener">📄 Paper</a>
+          <a class="btn secondary" href="https://github.com/showlab/Aloha" target="_blank" rel="noopener">💻 Code</a>
+          <a class="btn secondary" href="#" target="_blank" rel="noopener">🎬 Project Video</a>
+          <a class="btn secondary" href="#comparisons">⚔️ Comparison Demos</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/branding/hero_banner.png" alt="ShowUI-Aloha hero banner" />
+      </div>
+    </section>
+  </header>
+
+    <!-- ABOUT / WHAT IS -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>What is ShowUI-Aloha?</h2>
+
+        <p>
+          <strong>ShowUI-Aloha</strong> is a human-taught computer-use agent designed for real Windows and macOS desktops.
+          Instead of relying purely on prompts, Aloha learns directly from human demonstrations: it records the screen,
+          mouse, and keyboard while a human completes a task, then distills the demonstration into a semantic action trace.
+        </p>
+
+        <div class="two-column">
+
+          <!-- LEFT COLUMN -->
+          <div>
+            <p>
+              Aloha learns through <strong>abstraction, not memorization</strong>. A single demonstration can generalize to an
+              entire family of related tasks — such as booking different flights, editing new spreadsheets, or modifying other
+              slide decks — as long as they share the same workflow structure.
+            </p>
+
+            <ul class="feature-list">
+              <li>Records human demonstrations (screen + mouse + keyboard)</li>
+              <li>Learns semantic action traces from demonstrations</li>
+              <li>Plans new tasks by reusing the learned workflow</li>
+              <li>Executes robustly with OS-level clicks, drags, typing, scrolling, and hotkeys</li>
+            </ul>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="figure">
+            <img src="assets/diagrams/pipeline_4_step.png" alt="Aloha 4-step teaching and execution pipeline" />
+            <p class="figure-caption">Figure: Aloha learns from human demonstrations and reuses the abstracted trace to execute new task variants.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- COMPARISONS -->
+    <section id="comparisons" class="section section-alt">
+      <div class="container">
+        <h2>Comparisons with Commercial Agents</h2>
+        <p>
+          We compare ShowUI-Aloha with strong commercial agents on realistic multi-step workflows. While business models
+          often struggle with long-horizon UI interaction, ambiguous states, or recovering from partial progress, Aloha
+          can leverage a single human demonstration to remain grounded and consistent.
+        </p>
+
+        <div class="comparison-grid">
+          <!-- CASE 1 -->
+          <article class="comparison-card">
+            <h3>Case 1 — GitHub Repository Update</h3>
+            <div class="video-wrapper">
+              <video
+                src="https://github.com/SirCSpencer/Aloha_Webpage/blob/main/assets/comparisons/github.mp4"
+                controls
+                playsinline
+                muted
+                loop
+              ></video>
+            </div>
+            <ul class="comparison-points">
+              <li>Commercial agent cannot infer that the repository lives under <code>Documents/GitHub</code>.</li>
+              <li>Falls into repeated path-search loops and opens incorrect folders.</li>
+              <li><strong>Aloha reuses the human-taught workflow to navigate to the correct directory and complete the update.</strong></li>
+            </ul>
+          </article>
+
+          <!-- CASE 2 -->
+          <article class="comparison-card">
+            <h3>Case 2 — PowerPoint Background Color Editing</h3>
+            <div class="video-wrapper">
+              <video
+                src="https://github.com/SirCSpencer/Aloha_Webpage/blob/main/assets/comparisons/slides.mp4"
+                controls
+                playsinline
+                muted
+                loop
+              ></video>
+            </div>
+            <ul class="comparison-points">
+              <li>Commercial agent misselects the ribbon icon and applies the wrong background color (orange instead of yellow).</li>
+              <li>Small UI ambiguities in the toolbar cause cascading errors it cannot recover from.</li>
+              <li><strong>Aloha imitates the demonstrated selection and applies the correct yellow background reliably.</strong></li>
+            </ul>
+          </article>
+
+          <!-- CASE 3 -->
+          <article class="comparison-card">
+            <h3>Case 3 — Excel Matrix Transpose Challenge</h3>
+            <div class="video-wrapper">
+              <video
+                src="https://github.com/SirCSpencer/Aloha_Webpage/blob/main/assets/comparisons/sheet.mp4"
+                controls
+                playsinline
+                muted
+                loop
+              ></video>
+            </div>
+            <ul class="comparison-points">
+              <li>Commercial agent fails to locate the “Transpose” option inside Excel’s paste menu.</li>
+              <li>Gets stuck exploring menus without ever completing the matrix transpose.</li>
+              <li><strong>Aloha reproduces the human-taught sequence and executes a clean transpose of the matrix.</strong></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SYSTEM / ARCHITECTURE -->
+    <section id="system" class="section">
+      <div class="container">
+        <h2>System &amp; Architecture</h2>
+        <p>
+          ShowUI-Aloha is built as a modular pipeline that cleanly separates data collection, learning, planning,
+          and execution. This design makes the system easy to extend and adapt to different desktops and agents.
+        </p>
+
+        <div class="figure figure-large">
+          <img src="assets/diagrams/architecture_diagram.png" alt="ShowUI-Aloha architecture overview" />
+          <p class="figure-caption">Figure: Overall architecture of ShowUI-Aloha.</p>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3>Recorder</h3>
+            <p>
+              The Recorder captures human demonstrations on real Windows and macOS desktops, logging screenshots,
+              mouse trajectories, button presses, and keystrokes into a project folder.
+            </p>
+
+            <h3>Learner</h3>
+            <p>
+              The Learner parses raw logs into <em>semantic action traces</em>, grouping low-level events into high-level
+              operations such as “open browser”, “fill in form”, “resize window”, or “save edited slide”.
+            </p>
+          </div>
+          <div>
+            <h3>Planner</h3>
+            <p>
+              Given a new natural language task, the Planner uses the human-taught trace as in-context guidance, deciding
+              how to reuse, skip, or adapt steps from the demonstration for the new goal.
+            </p>
+
+            <h3>Actor &amp; Executor</h3>
+            <p>
+              Finally, the Actor and Executor ground the plan in the actual UI: they carry out OS-level clicks,
+              drag-and-drop operations, scrolling, and typing, while monitoring visual feedback to keep the agent on track.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMOS -->
+    <section id="demos" class="section section-alt">
+      <div class="container">
+        <h2>Demo Gallery</h2>
+        <p>
+          A single demonstration teaches Aloha a workflow, which can then be reused to solve new instances of the same
+          task family. Below are a few representative demos.
+        </p>
+
+        <div class="demo-grid">
+          <article class="demo-card">
+            <img src="assets/demos/air.gif" alt="Air-ticket booking demo" />
+            <h3>Air-ticket booking</h3>
+            <p>End-to-end flight booking with form filling, date picking, and confirmation screens.</p>
+          </article>
+
+          <article class="demo-card">
+            <img src="assets/demos/excel.gif" alt="Excel matrix transpose demo" />
+            <h3>Excel: matrix transpose</h3>
+            <p>Spreadsheet manipulation including range selection, copy-paste, and formula application.</p>
+          </article>
+
+          <article class="demo-card">
+            <img src="assets/demos/ppt.gif" alt="PowerPoint background editing demo" />
+            <h3>PowerPoint batch background editing</h3>
+            <p>Bulk editing of slide backgrounds with consistent visual style across the deck.</p>
+          </article>
+
+          <article class="demo-card demo-card-wide">
+            <img src="assets/demos/git.gif" alt="GitHub repository editing demo" />
+            <h3>GitHub repository editing</h3>
+            <p>Editing and updating repository files directly from the desktop without manual repetition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OSWORLD BENCHMARK -->
+    <section id="benchmark" class="section">
+      <div class="container">
+        <h2>OSWorld Benchmark</h2>
+        <p>
+          We evaluate ShowUI-Aloha on the full OSWorld benchmark of 361 realistic computer-use tasks spanning web,
+          office, multimedia, and system operations. Aloha solves 217 tasks end-to-end, achieving a strict success rate
+          of <strong>60.1%</strong> and significantly outperforming existing baselines, especially on longer workflows.
+        </p>
+
+        <div class="figure-group">
+          <div class="figure">
+            <img src="assets/benchmarks/osworld_bar_chart.png" alt="OSWorld per-category results" />
+            <p class="figure-caption">Category-wise success rates across the 361 OSWorld tasks.</p>
+          </div>
+          <div class="figure">
+            <img src="assets/benchmarks/baseline_comparison_chart.png" alt="Baseline comparison chart" />
+            <p class="figure-caption">Comparison against open and commercial agents on OSWorld.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USAGE / GETTING STARTED -->
+    <section id="usage" class="section section-alt">
+      <div class="container">
+        <h2>Getting Started</h2>
+        <p>
+          The full installation and usage instructions are available in the GitHub README. Here is a high-level overview
+          of a typical end-to-end run with ShowUI-Aloha.
+        </p>
+
+        <ol class="steps-list">
+          <li>
+            <strong>Install Aloha.</strong> Clone the repository, create a virtual environment, and install dependencies:
+            <code>pip install -r requirements.txt</code>.
+          </li>
+          <li>
+            <strong>Record a demonstration.</strong> Launch the Recorder (Windows or macOS binary from Releases), perform
+            your workflow, and save the project under <code>Aloha_Learn/projects/&lt;project_name&gt;/</code>.
+          </li>
+          <li>
+            <strong>Parse into a trace.</strong> Run the parser to convert the raw recording into a semantic trace:
+            <code>python Aloha_Learn/parser.py &lt;project_name&gt;</code>, which produces
+            <code>Aloha_Learn/projects/&lt;project_name&gt;_trace.json</code>.
+          </li>
+          <li>
+            <strong>Execute via Actor &amp; Executor.</strong> Place the trace into <code>Aloha_Act/trace_data/</code> and
+            call:
+            <code>python Aloha_Act/scripts/aloha_run.py --task "Your task" --trace_id "&lt;trace_id&gt;"</code>.
+          </li>
+        </ol>
+
+        <p>
+          For more details, including configuration of VLM APIs and advanced options, please refer to the
+          <a href="https://github.com/showlab/Aloha" target="_blank" rel="noopener">GitHub README</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ROADMAP & LICENSE -->
+    <section id="roadmap" class="section">
+      <div class="container">
+        <h2>Roadmap &amp; License</h2>
+        <div class="two-column">
+          <div>
+            <h3>Roadmap</h3>
+            <ul>
+              <li>Better fine-grained element targeting.</li>
+              <li>More robust drag-based text editing.</li>
+              <li>Few-shot generalization to related workflows.</li>
+              <li>Linux adaptation.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>License</h3>
+            <p>
+              ShowUI-Aloha is released under the <strong>MIT License</strong>. You are welcome to use, modify,
+              and extend the code for research and practical applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITATION -->
+    <section id="citation" class="section section-alt">
+      <div class="container">
+        <h2>Citation</h2>
+        <p>If you find ShowUI-Aloha useful in your research or applications, please cite:</p>
+
+        <pre class="bibtex">
+@article{showui_aloha,
+  title  = {ShowUI-Aloha: Human-Taught GUI Agent},
+  author = {Yichun Zhang and Mingyu Ouyang and Siyuan Hu and Xiangwu Guo and
+            Yauhong Goh and Jessica Hu and Zhiheng Chen and Xin Wang and
+            Difei Gao and Mike Zheng Shou},
+  year   = {2025}
+}
+        </pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-text">
+        <p>© 2025 Show Lab, National University of Singapore.</p>
+        <p>Website built for the ShowUI-Aloha project.</p>
+      </div>
+      <div class="footer-logo">
+        <img src="assets/branding/footer_logo.png" alt="ShowUI-Aloha footer logo" />
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

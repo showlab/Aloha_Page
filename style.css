@@ -1,0 +1,418 @@
+/* === Base === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* === Layout helpers === */
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+/* === Header & Nav === */
+
+.site-header {
+  background: linear-gradient(135deg, #0f172a, #1f2937);
+  color: #f9fafb;
+  padding-bottom: 2.5rem;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.nav-title {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(249, 250, 251, 0.1);
+  color: #ffffff;
+}
+
+/* === Hero === */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem 0 0;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin: 0 0 0.3rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: #d1d5db;
+}
+
+.hero-tagline {
+  margin: 0 0 0.25rem;
+  color: #e5e7eb;
+}
+
+.hero-tagline-small {
+  margin: 0 0 1rem;
+  color: #9ca3af;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.stat-pill {
+  font-size: 0.8rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease,
+    transform 0.08s ease;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: #f9fafb;
+}
+
+.btn.primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border-color: #6b7280;
+}
+
+.btn.secondary:hover {
+  background: rgba(31, 41, 55, 0.8);
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.hero-image img {
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+}
+
+/* === Sections === */
+
+.section h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1.25rem;
+}
+
+.section p {
+  margin: 0 0 1rem;
+  color: #374151;
+}
+
+.section a {
+  color: #2563eb;
+}
+
+/* Two-column layout */
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+/* Feature list */
+
+.feature-list {
+  padding-left: 1.1rem;
+  margin: 0;
+}
+
+.feature-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Figures */
+
+.figure,
+.figure-large {
+  margin-top: 1rem;
+}
+
+.figure img,
+.figure-large img {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.figure-caption {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 0.4rem;
+}
+
+.figure-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+/* === Comparisons === */
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.comparison-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comparison-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.video-wrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background: #000000;
+}
+
+.comparison-points {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* === Demo gallery === */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.demo-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.demo-card img {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.demo-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+}
+
+.demo-card p {
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.demo-card-wide {
+  grid-column: span 3;
+}
+
+/* === Steps / Usage === */
+
+.steps-list {
+  padding-left: 1.1rem;
+  margin-top: 1rem;
+}
+
+.steps-list li {
+  margin-bottom: 0.75rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0.3rem;
+  background: #e5e7eb;
+}
+
+/* === BibTeX === */
+
+.bibtex {
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* === Footer === */
+
+.site-footer {
+  background: #0f172a;
+  color: #9ca3af;
+  padding: 1.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-text p {
+  margin: 0.1rem 0;
+  font-size: 0.85rem;
+}
+
+.footer-logo img {
+  max-width: 140px;
+  opacity: 0.9;
+}
+
+/* === Responsive === */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-image {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .figure-group {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comparison-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demo-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .demo-card-wide {
+    grid-column: span 1;
+  }
+
+  .nav-links {
+    display: none; /* keep it simple; could add mobile nav later */
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+}
