@@ -374,18 +374,17 @@ code {
   opacity: 0.9;
 }
 
-#responsive-video-container {
-  width: 100vw;                         /* force full viewport width */
-  margin-left: calc(50% - 50vw);        /* escape container centering */
-  display: flex;
-  justify-content: center;
+#responsive-video-container{
+  width: 100%;
+  text-align: center;          /* fallback centering */
 }
 
-#responsive-video-container video {
-  max-width: 640px;                     /* or 900px if you prefer */
-  width: 100%;
-  height: auto;
+#responsive-video-container video{
   display: block;
+  margin: 0 auto !important;   /* force centering even if overridden */
+  width: min(100%, 900px);     /* choose your max display size */
+  height: auto;
+  aspect-ratio: 640 / 368;     /* keep your video ratio */
 }
 
 /* === Responsive === */
